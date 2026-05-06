@@ -1,0 +1,82 @@
+// 1. hello world
+"hello world" | >
+
+// 2. fibonacci sequence
+// matrix power trick. no loops required.
+mg_base | ** ia_n | * vg_start | ^ il_fib
+
+// 3. factorial
+// generate range, broadcast cumulative product.
+ia_n | # | @ * | ^ il_out
+
+// 4. 99 bottles of beer
+// literal drops directly into the pipe. reverse it, map the string template.
+99 | # | ~ | @ format sg_lyrics | >
+
+// 5. bubble sort
+// human loops are dead. use the hardware sort macro.
+va_in | sort | ^ vl_out
+
+// 6. fizzbuzz
+// vector masks running in parallel. 
+100 | # | = vl_i
+vl_i | @ %% 15 | == 0 | ? sg_fb | = vl_1
+vl_1 | @ %% 3 | == 0 | ? sg_f | = vl_2
+vl_2 | @ %% 5 | == 0 | ? sg_b | >
+
+// 7. empty program
+// parser idles and drops the tick.
+
+// 8. a+b
+ia_a | + ia_b | ^ il_out
+
+// 9. 100 doors
+// math trick. only perfect squares stay open. use the modulo logic gate.
+100 | # | @ sqrt | @ %% 1 | == 0 | ^ bl_doors
+
+// 10. quine
+// feed the source filepath directly into the buffer and pipe to stdout.
+sl_path | << | >
+
+// 11. launch rocket
+// the v1.4 tick break ';' lets us sequence output without writing variables.
+10 | # | ~ | > ; sg_fire | > ; vg_accel | @ format sg_log | >
+
+// 12. nkt law verification
+// raw data block hits parallel log and average.
+ma_data | @ log | mean | == fg_nkt | ^ bl_ok
+
+// 13. universal lambda machine
+// evaluate the buffer stream directly in the pipe.
+bufa_lam | eval | ^ bufl_out
+
+// 14. nautical bell
+// system time modulo watch interval triggers the audio buffer pipe.
+iy_time | %% ig_watch | == 0 | ? bufy_bell | >
+
+// 15. earliest difference between primes
+// prime sieve, shift it, subtract, parallel find match, grab max index.
+ia_max | P | = vl_p
+vl_p | shift 1 | - vl_p | @ == ia_diff | max_idx | ^ il_idx
+
+// 16. canny edge detector
+// the fork operator '&' splits the blur matrix into two parallel convolutions.
+ma_img | C mg_gauss | = ml_blur
+ml_blur | & C mg_sx = ml_gx | C mg_sy = ml_gy
+ml_gx | @ ^2 | + ml_gy_sq | @ sqrt | ^ ml_edge
+
+// 17. death star
+// broadcast absolute zero across alderaan.
+mg_alderaan | @ * 0 | = mg_dust
+
+// 18. chat server
+// connect the incoming network stream straight to the global broadcast socket.
+sta_in | > st_all
+
+// 19. faulhaber's triangle
+// pascal matrix times bernoulli vector.
+mg_pascal | * vg_bern | ^ ml_faul
+
+// 20. execute a markov algorithm
+// regex replacement matrix mapped over the input string.
+sa_in | @ replace mg_rules | ^ sl_out

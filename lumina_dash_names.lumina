@@ -1,0 +1,250 @@
+fn hello-world() do
+    print("Hello world!")
+end
+
+fn fib(n int) int do
+    mut a int = 0
+    mut b int = 1
+    mut i int = 0
+    loop do
+        let done bool = equal(i n)
+        if done do
+            ret a
+        end
+        let temp int = a
+        a = b
+        b = add(temp b)
+        i = add(i 1)
+    end
+end
+
+fn factorial(n int) int do
+    let is-zero bool = equal(n 0)
+    if is-zero do
+        ret 1
+    end
+    let n-minus-1 int = subtract(n 1)
+    let sub-fact int = factorial(n-minus-1)
+    let result int = multiply(n sub-fact)
+    ret result
+end
+
+fn bottles-of-beer() do
+    mut i int = 99
+    loop do
+        let finished bool = equal(i 0)
+        if finished do
+            ret
+        end
+        print(i)
+        print(" bottles of beer on the wall, ")
+        print(i)
+        print(" bottles of beer. Take one down, pass it around, ")
+        i = subtract(i 1)
+        print(i)
+        print(" bottles of beer on the wall.")
+    end
+end
+
+fn bubble-sort(arr array int) do
+    let n int = length(arr)
+    mut i int = 0
+    loop do
+        let i-done bool = equal(i n)
+        if i-done do
+            ret
+        end
+        mut j int = 0
+        let limit int = subtract(n i)
+        let limit-final int = subtract(limit 1)
+        loop do
+            let j-done bool = equal(j limit-final)
+            if j-done do
+                break
+            end
+            let j-plus-1 int = add(j 1)
+            let val-a int = index(arr j)
+            let val-b int = index(arr j-plus-1)
+            let swap bool = greater-than(val-a val-b)
+            if swap do
+                set-index(arr j val-b)
+                set-index(arr j-plus-1 val-a)
+            end
+            j = add(j 1)
+        end
+        i = add(i 1)
+    end
+end
+
+fn fizzbuzz() do
+    mut i int = 1
+    loop do
+        let done bool = greater-than(i 100)
+        if done do
+            ret
+        end
+        let mod15 int = remainder(i 15)
+        let is-fizzbuzz bool = equal(mod15 0)
+        if is-fizzbuzz do
+            print("FizzBuzz")
+        else
+            let mod3 int = remainder(i 3)
+            let is-fizz bool = equal(mod3 0)
+            if is-fizz do
+                print("Fizz")
+            else
+                let mod5 int = remainder(i 5)
+                let is-buzz bool = equal(mod5 0)
+                if is-buzz do
+                    print("Buzz")
+                else
+                    print(i)
+                end
+            end
+        end
+        i = add(i 1)
+    end
+end
+
+fn main() do
+end
+
+fn a-plus-b(a int b int) int do
+    let res int = add(a b)
+    ret res
+end
+
+fn hundred-doors() do
+    let doors array bool = new array bool(101)
+    mut i int = 1
+    loop do
+        let i-done bool = greater-than(i 100)
+        if i-done do
+            break
+        end
+        mut j int = i
+        loop do
+            let j-done bool = greater-than(j 100)
+            if j-done do
+                break
+            end
+            let current bool = index(doors j)
+            let toggled bool = not(current)
+            set-index(doors j toggled)
+            j = add(j i)
+        end
+        i = add(i 1)
+    end
+end
+
+fn quine() do
+    let quote int = 34
+    print(s)
+end
+
+fn launch-rocket() do
+    mut t int = 10
+    loop do
+        let done bool = less-than(t 0)
+        if done do
+            break
+        end
+        print("T-minus ")
+        print(t)
+        t = subtract(t 1)
+    end
+    print("Liftoff!")
+end
+
+fn nkt-law(t f64 t-env f64 t-init f64 k f64) f64 do
+    let diff f64 = subtract(t-init t-env)
+    let kt f64 = multiply(k t)
+    let neg-kt f64 = subtract(0.0 kt)
+    let exponent f64 = exp(neg-kt)
+    let term2 f64 = multiply(diff exponent)
+    let result f64 = add(t-env term2)
+    ret result
+end
+
+fn lambda-identity(x int) int do
+    ret x
+end
+
+fn nautical-bell(h int m int) int do
+    let h-mod int = remainder(h 4)
+    let h-half int = multiply(h-mod 2)
+    let is-half bool = greater-than(m 29)
+    mut bells int = h-half
+    if is-half do
+        bells = add(bells 1)
+    end
+    let is-zero bool = equal(bells 0)
+    if is-zero do
+        ret 8
+    else
+        ret bells
+    end
+end
+
+fn is-prime(n int) bool do
+    let small bool = less-than(n 2)
+    if small do
+        ret false
+    end
+    mut i int = 2
+    loop do
+        let i-sq int = multiply(i i)
+        let high bool = greater-than(i-sq n)
+        if high do
+            ret true
+        end
+        let mod int = remainder(n i)
+        let div bool = equal(mod 0)
+        if div do
+            ret false
+        end
+        i = add(i 1)
+    end
+end
+
+fn grad-check(p1 int p2 int) int do
+    let res int = subtract(p1 p2)
+    ret res
+end
+
+fn draw-death-star(r int) do
+    mut y int = subtract(0 r)
+    loop do
+        let y-done bool = greater-than(y r)
+        if y-done do
+            ret
+        end
+        y = add(y 1)
+    end
+end
+
+import "std/os"
+fn start-server() do
+    let fd int = socket-create()
+    let success bool = socket-bind(fd 65432)
+    if success do
+        socket-listen(fd)
+    end
+end
+
+fn faulhaber-val(p int j int) f64 do
+    ret 1.0
+end
+
+type Rule struct do
+    pattern string
+    replace string
+    is-term bool
+end
+
+fn markov(rules array Rule input string) string do
+    mut text string = input
+    loop do
+        ret text
+    end
+end
