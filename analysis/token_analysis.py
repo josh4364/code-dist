@@ -64,6 +64,49 @@ def plot_compressibility(df):
     plt.close()
     print("Saved token_compressibility.png")
 
+def plot_sizes(df):
+    # Plot 1: Total Characters
+    df_chars = df.sort_values('Chars', ascending=False)
+    plt.figure(figsize=(14, 10))
+    sns.barplot(x='Chars', y='Language', data=df_chars, palette='viridis')
+    plt.title('Total Character Count per Language Example')
+    plt.xlabel('Total Characters')
+    plt.grid(axis='x', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.savefig('total_characters.png')
+    plt.close()
+    print("Saved total_characters.png")
+
+    # Plot 2: Total Tokens
+    df_tokens = df.sort_values('Tokens', ascending=False)
+    plt.figure(figsize=(14, 10))
+    sns.barplot(x='Tokens', y='Language', data=df_tokens, palette='magma')
+    plt.title('Total LLM Token Count per Language Example')
+    plt.xlabel('Total Tokens')
+    plt.grid(axis='x', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.savefig('total_tokens.png')
+    plt.close()
+    print("Saved total_tokens.png")
+
+    # Plot 3: Combined Comparison
+    # Melt the dataframe for a grouped bar plot
+    df_melted = df.melt(id_vars='Language', value_vars=['Chars', 'Tokens'], 
+                        var_name='Metric', value_name='Size')
+    # Sort by total size (Chars) for a cleaner visual
+    lang_order = df.sort_values('Chars', ascending=False)['Language'].tolist()
+    
+    plt.figure(figsize=(14, 12))
+    sns.barplot(x='Size', y='Language', hue='Metric', data=df_melted, 
+                order=lang_order, palette=['#3498db', '#e74c3c'])
+    plt.title('Side-by-Side Comparison: Characters vs Tokens')
+    plt.xlabel('Count')
+    plt.grid(axis='x', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.savefig('combined_size_comparison.png')
+    plt.close()
+    print("Saved combined_size_comparison.png")
+
 def plot_top_tokens(counter):
     common = counter.most_common(30)
     df = pd.DataFrame(common, columns=['Token', 'Frequency'])
@@ -103,6 +146,7 @@ def generate_report(df, counter):
 if __name__ == "__main__":
     df, counter = analyze_tokens()
     plot_compressibility(df)
+    plot_sizes(df)
     plot_top_tokens(counter)
     generate_report(df, counter)
     print("Token analysis complete.")

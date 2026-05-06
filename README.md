@@ -9,6 +9,18 @@ This chart ranks languages by **Tokens per Character**. A lower ratio indicates 
 
 ![Token Compressibility](analysis/token_compressibility.png)
 
+### Dataset Scale & Comparison
+These charts visualize the total size of each language example in the dataset, comparing raw character counts vs. LLM token counts.
+
+#### side-by-side Comparison
+![Combined Size Comparison](analysis/combined_size_comparison.png)
+
+#### Total Characters
+![Total Characters](analysis/total_characters.png)
+
+#### Total Tokens
+![Total Tokens](analysis/total_tokens.png)
+
 ### Language Similarity Matrix
 A heatmap based on the distribution of punctuation and symbols. Higher intensity indicates languages that "look" similar in terms of character usage.
 
