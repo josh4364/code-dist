@@ -1,0 +1,250 @@
+function hello_world() do
+    print("Hello world!")
+end
+
+function fib(n int) int do
+    mut a int = 0
+    mut b int = 1
+    mut i int = 0
+    loop do
+        let done bool = equal(i n)
+        if done do
+            return a
+        end
+        let temp int = a
+        a = b
+        b = add(temp b)
+        i = add(i 1)
+    end
+end
+
+function factorial(n int) int do
+    let is_zero bool = equal(n 0)
+    if is_zero do
+        return 1
+    end
+    let n_minus_1 int = subtract(n 1)
+    let sub_fact int = factorial(n_minus_1)
+    let result int = multiply(n sub_fact)
+    return result
+end
+
+function bottles_of_beer() do
+    mut i int = 99
+    loop do
+        let finished bool = equal(i 0)
+        if finished do
+            return
+        end
+        print(i)
+        print(" bottles of beer on the wall, ")
+        print(i)
+        print(" bottles of beer. Take one down, pass it around, ")
+        i = subtract(i 1)
+        print(i)
+        print(" bottles of beer on the wall.")
+    end
+end
+
+function bubble_sort(arr array int) do
+    let n int = length(arr)
+    mut i int = 0
+    loop do
+        let i_done bool = equal(i n)
+        if i_done do
+            return
+        end
+        mut j int = 0
+        let limit int = subtract(n i)
+        let limit_final int = subtract(limit 1)
+        loop do
+            let j_done bool = equal(j limit_final)
+            if j_done do
+                break
+            end
+            let j_plus_1 int = add(j 1)
+            let val_a int = index(arr j)
+            let val_b int = index(arr j_plus_1)
+            let swap bool = greater_than(val_a val_b)
+            if swap do
+                set_index(arr j val_b)
+                set_index(arr j_plus_1 val_a)
+            end
+            j = add(j 1)
+        end
+        i = add(i 1)
+    end
+end
+
+function fizzbuzz() do
+    mut i int = 1
+    loop do
+        let done bool = greater_than(i 100)
+        if done do
+            return
+        end
+        let mod15 int = remainder(i 15)
+        let is_fizzbuzz bool = equal(mod15 0)
+        if is_fizzbuzz do
+            print("FizzBuzz")
+        else
+            let mod3 int = remainder(i 3)
+            let is_fizz bool = equal(mod3 0)
+            if is_fizz do
+                print("Fizz")
+            else
+                let mod5 int = remainder(i 5)
+                let is_buzz bool = equal(mod5 0)
+                if is_buzz do
+                    print("Buzz")
+                else
+                    print(i)
+                end
+            end
+        end
+        i = add(i 1)
+    end
+end
+
+function main() do
+end
+
+function a_plus_b(a int b int) int do
+    let res int = add(a b)
+    return res
+end
+
+function hundred_doors() do
+    let doors array bool = new array bool(101)
+    mut i int = 1
+    loop do
+        let i_done bool = greater_than(i 100)
+        if i_done do
+            break
+        end
+        mut j int = i
+        loop do
+            let j_done bool = greater_than(j 100)
+            if j_done do
+                break
+            end
+            let current bool = index(doors j)
+            let toggled bool = not(current)
+            set_index(doors j toggled)
+            j = add(j i)
+        end
+        i = add(i 1)
+    end
+end
+
+function quine() do
+    let quote int = 34
+    print(s)
+end
+
+function launch_rocket() do
+    mut t int = 10
+    loop do
+        let done bool = less_than(t 0)
+        if done do
+            break
+        end
+        print("T-minus ")
+        print(t)
+        t = subtract(t 1)
+    end
+    print("Liftoff!")
+end
+
+function nkt_law(t double t_env double t_init double k double) double do
+    let diff double = subtract(t_init t_env)
+    let kt double = multiply(k t)
+    let neg_kt double = subtract(0.0 kt)
+    let exponent double = exp(neg_kt)
+    let term2 double = multiply(diff exponent)
+    let result double = add(t_env term2)
+    return result
+end
+
+function lambda_identity(x int) int do
+    return x
+end
+
+function nautical_bell(h int m int) int do
+    let h_mod int = remainder(h 4)
+    let h_half int = multiply(h_mod 2)
+    let is_half bool = greater_than(m 29)
+    mut bells int = h_half
+    if is_half do
+        bells = add(bells 1)
+    end
+    let is_zero bool = equal(bells 0)
+    if is_zero do
+        return 8
+    else
+        return bells
+    end
+end
+
+function is_prime(n int) bool do
+    let small bool = less_than(n 2)
+    if small do
+        return false
+    end
+    mut i int = 2
+    loop do
+        let i_sq int = multiply(i i)
+        let high bool = greater_than(i_sq n)
+        if high do
+            return true
+        end
+        let mod int = remainder(n i)
+        let div bool = equal(mod 0)
+        if div do
+            return false
+        end
+        i = add(i 1)
+    end
+end
+
+function grad_check(p1 int p2 int) int do
+    let res int = subtract(p1 p2)
+    return res
+end
+
+function draw_death_star(r int) do
+    mut y int = subtract(0 r)
+    loop do
+        let y_done bool = greater_than(y r)
+        if y_done do
+            return
+        end
+        y = add(y 1)
+    end
+end
+
+import "std/os"
+function start_server() do
+    let fd int = socket_create()
+    let success bool = socket_bind(fd 65432)
+    if success do
+        socket_listen(fd)
+    end
+end
+
+function faulhaber_val(p int j int) double do
+    return 1.0
+end
+
+type Rule struct do
+    pattern string
+    replace string
+    is_term bool
+end
+
+function markov(rules array Rule input string) string do
+    mut text string = input
+    loop do
+        return text
+    end
+end

@@ -4,21 +4,21 @@
 
 | Rank | Symbol | Frequency | % Total |
 |------|--------|-----------|---------|
-| 1 | `(` | 5786 | 12.81% |
-| 2 | `)` | 5786 | 12.81% |
-| 3 | `=` | 5636 | 12.48% |
-| 4 | `.` | 3730 | 8.26% |
-| 5 | `;` | 2366 | 5.24% |
-| 6 | `,` | 2090 | 4.63% |
-| 7 | `-` | 1807 | 4.00% |
-| 8 | `"` | 1745 | 3.86% |
-| 9 | `_` | 1715 | 3.80% |
-| 10 | `:` | 1664 | 3.68% |
-| 11 | `/` | 1441 | 3.19% |
-| 12 | `{` | 1224 | 2.71% |
-| 13 | `}` | 1222 | 2.71% |
-| 14 | `+` | 1126 | 2.49% |
-| 15 | `[` | 1022 | 2.26% |
+| 1 | `(` | 5898 | 12.88% |
+| 2 | `)` | 5898 | 12.88% |
+| 3 | `=` | 5713 | 12.48% |
+| 4 | `.` | 3764 | 8.22% |
+| 5 | `;` | 2366 | 5.17% |
+| 6 | `,` | 2101 | 4.59% |
+| 7 | `-` | 1825 | 3.99% |
+| 8 | `_` | 1815 | 3.96% |
+| 9 | `"` | 1771 | 3.87% |
+| 10 | `:` | 1671 | 3.65% |
+| 11 | `/` | 1454 | 3.18% |
+| 12 | `{` | 1224 | 2.67% |
+| 13 | `}` | 1222 | 2.67% |
+| 14 | `+` | 1128 | 2.46% |
+| 15 | `[` | 1028 | 2.25% |
 
 ## Language Similarity Report (Top 3 matches per language)
 
@@ -27,6 +27,7 @@ This table shows which languages are most similar in their use of punctuation an
 | Language | #1 Closest | #2 Closest | #3 Closest |
 |----------|------------|------------|------------|
 | COBOL.cbl | f#.fs (81.5%) | haskel.hs (75.1%) | crystal.cr (72.7%) |
+| README.md | crystal.cr (71.1%) | f#.fs (67.8%) | elixir.ex (66.6%) |
 | bare.bare | crystal.cr (50.4%) | ocaml.ml (49.9%) | f#.fs (46.4%) |
 | c.c | objective-c.m (97.2%) | csharp.cs (96.4%) | dart.dart (95.9%) |
 | clojure.clj | common lisp.lisp (96.3%) | scheme.scm (96.1%) | visual basic.vb (84.4%) |
@@ -49,10 +50,11 @@ This table shows which languages are most similar in their use of punctuation an
 | julia.jl | lua.lua (97.8%) | python.py (97.7%) | ruby.rb (94.6%) |
 | kotlin.kt | groovy.groovy (98.1%) | scala.scala (94.2%) | typescript.ts (92.7%) |
 | lua.lua | julia.jl (97.8%) | python.py (94.8%) | ruby.rb (93.8%) |
-| lumina.lumina | lumina_no_comment.lumina (98.6%) | lumina_int.lumina (98.6%) | ocaml.ml (87.4%) |
+| lumina.lumina | lumina_no_comment.lumina (98.6%) | lumina_int_function_double_return.lumina (98.6%) | lumina_int.lumina (98.6%) |
 | lumina_dash_names.lumina | common lisp.lisp (85.7%) | scheme.scm (85.1%) | visual basic.vb (84.4%) |
-| lumina_int.lumina | lumina_no_comment.lumina (100.0%) | lumina.lumina (98.6%) | ocaml.ml (83.5%) |
-| lumina_no_comment.lumina | lumina_int.lumina (100.0%) | lumina.lumina (98.6%) | ocaml.ml (83.5%) |
+| lumina_int.lumina | lumina_no_comment.lumina (100.0%) | lumina_int_function_double_return.lumina (100.0%) | lumina.lumina (98.6%) |
+| lumina_int_function_double_return.lumina | lumina_no_comment.lumina (100.0%) | lumina_int.lumina (100.0%) | lumina.lumina (98.6%) |
+| lumina_no_comment.lumina | lumina_int_function_double_return.lumina (100.0%) | lumina_int.lumina (100.0%) | lumina.lumina (98.6%) |
 | matlab.m | julia.jl (93.4%) | javscript.js (92.2%) | lua.lua (92.0%) |
 | nasm.s | fasm.s (96.1%) | matlab.m (88.0%) | lua.lua (87.4%) |
 | nim.nim | haskel.hs (91.5%) | scala.scala (91.0%) | swift.swift (90.8%) |
