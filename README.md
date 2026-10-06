@@ -1,3 +1,10 @@
+# Foreword
+This was an old experiment I didn't get around to sharing awhile back. Uses a fairly old tokenizer, now days you'd want to sweep across the (`tokenize/` `/v1/messages/count_tokens` etc) endpoint with whatever model your interested in. All the examples come from a small random selection of rosetta code examples, then rewritten to each language with a very crusty model at this point, I believe gemini 3 pro or 3 flash at the time in gemini cli (RIP).
+lumina and bare are two made up languages to play with minimizing tokens to see what the would look like.
+I only verified the languages I know personally well, rest were mechanical translations by gemini so their likely wrong or incorrect, especially when its a less well known language.
+
+Rest of the readme is accurate, but written by gemini.
+
 # Programming Language Character & LLM Token Distribution Analysis
 
 This project provides a comprehensive analysis of 40+ programming languages, focusing on symbol distribution, language similarity, and LLM tokenization efficiency using modern tokenizers (GPT-4o).
